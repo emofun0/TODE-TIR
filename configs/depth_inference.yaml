@@ -1,0 +1,54 @@
+# Inference settings
+inference:
+  target_size: [320, 240]
+  depth_scale: 1000  # Convert from mm to meters
+  depth_range: [0.0, 5.0]  # Valid depth range in meters
+
+# Processing settings
+processing:
+  save_16bit: true  # Save as 16-bit PNG
+  save_visualization: true
+  verbose: true
+  generate_pointcloud: false  # For single_test mode
+  visualize_pointcloud: false
+
+# Visualization settings
+visualization:
+  figsize: [10, 8]
+  colormap: 'hsv'
+  save_format: 'png'
+  dpi: 150
+
+# Paths
+paths:
+  rgb_dir: '/path/to/rgb/images'
+  depth_dir: '/path/to/depth/images'
+  output_dir: '/path/to/output'
+  visualization_dir: '/path/to/output/visualizations'
+  mask_dir: '/path/to/masks'  # Optional
+
+# File patterns for batch processing
+files:
+  rgb_pattern: '*.png'
+  depth_pattern: '*.png'
+  mask_pattern: '*.png'  # Optional
+  rgb_suffix: '-rgb'
+  depth_suffix: '-depth'
+  mask_suffix: '-mask'  # Optional
+  output_suffix: '-completed'
+  output_ext: '.png'
+
+# Single image processing
+single_image:
+  rgb_path: '/path/to/single/rgb.png'
+  depth_path: '/path/to/single/depth.png'
+  mask_path: '/path/to/single/mask.png'  # Optional
+  output_path: '/path/to/output/completed.png'
+
+# Single test mode
+single_test:
+  rgb_path: '/home/ganyon/data/transcg/scene3/1/rgb1.png'
+  depth_path: '/home/ganyon/data/transcg/scene3/1/depth1.png'
+  depth_gt_path: '/home/ganyon/data/transcg/scene3/1/depth1-gt.png'
+  output_path: '/home/ganyon/data/transcg/scene3/1/depth1-completed.png'
+  camera_intrinsics_path: '/home/ganyon/data/transcg/camera_intrinsics/1-camIntrinsics-D435.npy'
